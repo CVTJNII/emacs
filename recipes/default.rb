@@ -26,8 +26,8 @@ end
 if node['emacs']['disable_backups']
   cookbook_file "#{node['emacs']['site-start-path']}/70nobackups.el" do
     source '70nobackups.el'
-    owner  'root'
-    group  'root'
-    mode   0644
+    owner 'root'
+    group 'root'
+    mode 0644
   end
 end
