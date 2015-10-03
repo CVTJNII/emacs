@@ -33,6 +33,7 @@ when 'debian'
 when 'rhel', 'fedora', 'arch'
   default['emacs']['site-start-path'] = '/usr/share/emacs/site-lisp/site-start.d'
 else
+  default['emacs']['site-start-path'] = nil
   Chef::Log.warn("site-start path not known for platform #{node['platform_family']}, please add it.")
 end
 

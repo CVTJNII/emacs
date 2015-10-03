@@ -24,6 +24,7 @@ node['emacs']['packages'].each do |pkg|
 end
 
 if node['emacs']['disable_backups']
+  fail("['emacs']['site-start-path'] unset, cannot place site-start file") unless node['emacs']['site-start-path']
   cookbook_file "#{node['emacs']['site-start-path']}/70nobackups.el" do
     source '70nobackups.el'
     owner 'root'
